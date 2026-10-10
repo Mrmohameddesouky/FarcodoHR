@@ -11,7 +11,7 @@ class RecordDialog(QDialog):
   fields=[('employee_code','كود الموظف'),('full_name','الاسم'),('national_id','رقم الهوية'),('nationality','الجنسية'),('job_title','المسمى الوظيفي'),('department','الإدارة'),('phone','الهاتف'),('email','البريد'),('status','الحالة'),('notes','ملاحظات')] if kind=='employees' else [('contract_number','رقم العقد'),('employee_id','الموظف'),('start_date','بداية العقد'),('end_date','نهاية العقد'),('basic_salary','الراتب الأساسي'),('housing_allowance','بدل السكن'),('transport_allowance','بدل النقل'),('other_allowance','بدلات أخرى'),('status','الحالة'),('notes','ملاحظات')]
   for k,label in fields:
    if k=='employee_id':
-    w=QComboBox(); [(w.addItem(f\"{e['employee_code']} — {e['full_name']}\",e['id'])) for e in R.employee_choices()]
+    w=QComboBox(); [(w.addItem(f"{e['employee_code']} — {e['full_name']}",e['id'])) for e in R.employee_choices()]
    elif k in ('status',):
     w=QComboBox(); w.addItems(['Active','Inactive'] if kind=='employees' else ['Draft','Pending approval','Approved','Expired','Terminated'])
    elif k in ('start_date','end_date'):
