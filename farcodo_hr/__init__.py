@@ -1,0 +1,1 @@
+"""Farcodo HR application package."""
